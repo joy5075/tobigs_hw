@@ -5,4 +5,4 @@
 
 ### week2 
 * 회귀분석
-* gradeint descent 구현
+* Gradient Descent 구현
