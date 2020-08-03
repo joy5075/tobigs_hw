@@ -6,4 +6,4 @@
 ### week2 
 * 회귀분석
 * Gradient Descent 구현
-* AWS를  환경구축
+* AWS를 이용한 환경구축
