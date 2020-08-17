@@ -12,3 +12,9 @@
 * Naive Bayes 계산
 * Decision Tree : Gini index 함수 구현, Information Gain 함수 구현
 * KNN, Clustering
+
+### week4
+* SVM multi class classifier
+* SVM (imbalanced dataset) anomaly-detection
+* Ensemble : Kaggle 참여 (google app store rating)
+* Ensemble : Practical ML 
