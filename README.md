@@ -24,3 +24,6 @@
 ### week6
 * 클래스: 상속, LR클래스 구현
 * 신경망: 문제풀이, 신경망 코드 구현
+
+### week7
+* Neural Net 심화 + Framework
