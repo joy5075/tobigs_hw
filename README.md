@@ -27,3 +27,8 @@
 
 ### week7
 * Neural Net 심화 + Framework
+
+### week8
+* CNN 기초: AlexNet parameter 이해, AlexNet structure 구현
+* NLP 기초: Word tokenizing, embedding, insight
+* 강화학습 논문 리뷰: Playing Atari with Deep Reinforcement Learning
