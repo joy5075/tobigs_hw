@@ -36,3 +36,7 @@
 ### week9
 * CRNN 모델 구현(utils, main, custom_model)
 * Transformer(Attention is All you need) 논문 리뷰
+
+### week10
+* 추천 시스템(CF, CBF, MF, SVD)
+* GAN 과제 : DCGAN 논문 리뷰 및 구현
