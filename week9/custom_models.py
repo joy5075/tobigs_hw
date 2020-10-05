@@ -4,7 +4,7 @@ import torch.nn as nn
 class CRNN(nn.Module):
     def __init__(self):
         super(CRNN, self).__init__()
-        self.cnn_module = nn.Sequential(
+        self.cnn_model = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=64, kernel_size=3, stride=1, padding=1), # convRelu(0) 
             nn.ReLU(),
             nn.MaxPool2d(2,2),
@@ -21,6 +21,7 @@ class CRNN(nn.Module):
             nn.BatchNorm2d(512),
             nn.ReLU(),
             nn.Conv2d(512, 512, 3, stride=1, padding=1), # convRelu(5)
+            nn.MaxPool2d((2,2),(2,1),(0,1)),
             nn.ReLU(),
             nn.Conv2d(512, 512, 2, stride=1, padding=0), # convRelu(6, True)
             nn.BatchNorm2d(512),
@@ -29,6 +30,7 @@ class CRNN(nn.Module):
             
         self.rnn_model = nn.Sequential(
             nn.LSTM(512, 256, bidirectional=True),
+            nn.Linear(512,256),
             nn.LSTM(256, 256, bidirectional=True)
         )
 
@@ -38,11 +40,11 @@ class CRNN(nn.Module):
 
     def forward(self, input):
 #         conv = ---?---
-        conv = self.cnn(input)
+        conv = self.cnn_model(input)
         conv = conv.squeeze(2)
         conv = conv.permute(2, 0, 1)
 #         output, _ = ---?---
-        output, _ = self.rnn(conv)
+        output, _ = self.rnn_model(conv)
         seq_len, batch, h_2 =  output.size()
         output = output.view(seq_len * batch, h_2)
 #         output = ---?---
